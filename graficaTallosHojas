@@ -6,8 +6,14 @@ def grafica_tallos_hojas(datos):
     tallos = {}
     
     for numero in datos:
+        if numero % 1 != 0 or numero < 10:
+            numero = numero*10
+            
         tallo = numero // 10  # Parte entera (décadas)
         hoja = numero % 10    # Resto (unidades)
+
+        hoja = int(hoja)
+        tallo = int(tallo)
         
         if tallo not in tallos:
             tallos[tallo] = []
@@ -18,4 +24,3 @@ def grafica_tallos_hojas(datos):
     for tallo, hojas in tallos.items():
         hojas_str = " ".join(map(str, hojas))
         print(f"{tallo} | {hojas_str}")
-
