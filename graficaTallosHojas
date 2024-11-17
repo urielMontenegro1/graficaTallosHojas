@@ -1,0 +1,21 @@
+def grafica_tallos_hojas(datos):
+    # Ordenar los datos
+    datos.sort()
+    
+    # Crear un diccionario para los tallos
+    tallos = {}
+    
+    for numero in datos:
+        tallo = numero // 10  # Parte entera (décadas)
+        hoja = numero % 10    # Resto (unidades)
+        
+        if tallo not in tallos:
+            tallos[tallo] = []
+        tallos[tallo].append(hoja)
+    
+    # Imprimir la gráfica de tallos y hojas
+    print("Gráfica de tallos y hojas:")
+    for tallo, hojas in tallos.items():
+        hojas_str = " ".join(map(str, hojas))
+        print(f"{tallo} | {hojas_str}")
+
