@@ -6,12 +6,14 @@ def grafica_tallos_hojas(datos):
     tallos = {}
     
     for numero in datos:
+    # checamos si el numero es decimal o si es menor a 10
         if numero % 1 != 0 or numero < 10:
             numero = numero*10
             
         tallo = numero // 10  # Parte entera (décadas)
         hoja = numero % 10    # Resto (unidades)
 
+        #convertimos los nuemros a enteros
         hoja = int(hoja)
         tallo = int(tallo)
         
